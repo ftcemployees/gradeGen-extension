@@ -1,0 +1,55 @@
+// SETUP
+{
+  "DefaultGradeSchemeId": 0,
+  "GradingSystem": "Points | Weighted | Formula", // set system
+  "IsNullGradeZero": true | false // drop ungraded or treat as 0
+}
+
+// CATEGORIES
+{
+  "Name": <string>,
+  "ShortName": <string>,
+  "CanExceedMax": <boolean>,
+  "ExcludeFromFinalGrade": <boolean>,
+  "StartDate": null,
+  "EndDate": null,
+  "Weight": <number:decimal>|null,
+  "MaxPoints": <number:decimal>|null, // Seems to default to 10
+  "AutoPoints": <boolean>|null, // probably null
+  "WeightDistributionType": <number>|null,
+  /// 0: distrbute weight manually, 1: distrbute weights evenly
+  /// 2: distribute weight by points
+  // if 1, then these apply
+  "NumberOfHighestToDrop": <number>|null,
+  "NumberOfLowestToDrop": <number>|null
+}
+
+// GRADE OBJECT
+{
+  "Name": <string>, // cannot  / ” * < > + = | , %   (128)
+  "ShortName": <string>,
+  "GradeType": "Numeric",
+  "CategoryId": <D2L id for category> | null,
+  "MaxPoints": 0.01-9999999999,
+  "CanExceedMaxPoints": true | false,
+  "IsBonus": true | false,
+  "ExcludeFromFinalGradeCalculation": true | false,
+  "GradeSchemeId": 381 | null, // 381 is BYUI Standard
+  // "GradeSchemeUrl": "/d2l/api/le/1.19/157404/grades/schemes/381", <not an input>
+  // "Id": <not an input>
+  // "Description": {} <not an input>
+  // "Weight": <decimal>, <not an input>
+  // "ActivityId": <D2l id>, <not an input>
+  // "AssociatedTool": <??> | null
+}
+
+
+
+// use BYUI default, but info will be included, cannot make with API
+
+// GET Individual Student's Grades
+// /d2l/api/le/(version)/(orgUnitId)/grades/values/(userId)/
+
+
+
+[4,5,8,26,28,30,42,44,47,60,62,66,69,199,213,217,219,227,235,236,249,256,299,307,316,317,319,330,331,340,358,391,393,397,401,404,411,417,420,421,426,427,442,446,451,461,462,500,507,508,535,539,570,572,581,612,646,655,687,714,761,763,767,803,942,1013,1211]
